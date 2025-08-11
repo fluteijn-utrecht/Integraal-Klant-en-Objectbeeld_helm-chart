@@ -1,0 +1,32 @@
+{{- if .Values.monitoring.podMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{ include "iko.fullname" .}}
+  labels:
+    prometheus: {{ .Release.Namespace | quote }}
+    {{- include "iko.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "iko.selectorLabels" . | nindent 6 }}
+  namespaceSelector:
+    matchNames:
+    - {{ .Release.Namespace | quote }}
+  podMetricsEndpoints:
+  - basicAuth:
+      password:
+        key: SPRINGACTUATOR_PASSWORD
+        name: {{ include "iko.fullname" . }}
+      username:
+        key: SPRINGACTUATOR_USERNAME
+        name: {{ include "iko.fullname" . }}
+    path: /management/prometheus
+    port: management
+    {{- if .Values.monitoring.podMonitor.interval }}
+    interval: {{ .Values.monitoring.podMonitor.interval }}
+    {{- end }}
+    {{- if .Values.monitoring.podMonitor.scrapeTimeout }}
+    scrapeTimeout: {{ .Values.monitoring.podMonitor.scrapeTimeout }}
+    {{- end }}
+{{- end }}

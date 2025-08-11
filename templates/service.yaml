@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "iko.fullname" . }}
+  labels:
+    {{- include "iko.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "iko.selectorLabels" . | nindent 4 }}
+---
+{{- if .Values.service.management }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "iko.fullname" . }}-management
+  labels:
+    {{- include "iko.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: management
+      protocol: TCP
+      name: management
+  selector:
+    {{- include "iko.selectorLabels" . | nindent 4 }}
+{{- end }}
