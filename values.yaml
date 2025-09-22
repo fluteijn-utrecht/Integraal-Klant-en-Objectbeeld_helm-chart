@@ -208,7 +208,6 @@ settings:
     publicKey: ""
 
   iko:
-    # Application configuration
     # -- Port IKO listens on
     serverPort: 8080
 
