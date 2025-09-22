@@ -16,7 +16,7 @@ jobs:
           version: 3.9.0
       - name: Helm Lint
         run: |
-          helm lint
+          cd iko && helm lint
 
   add-readme-if-missing:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
         env:
           HELM_DOCS_VERSION: v1.14.2
         run: |
-          docker run --rm --volume "$(pwd):/helm-docs" -u $(id -u) "jnorwood/helm-docs:${HELM_DOCS_VERSION}"
+          cd iko && docker run --rm --volume "$(pwd):/helm-docs" -u $(id -u) "jnorwood/helm-docs:${HELM_DOCS_VERSION}"
 
       - name: Push changes
         env:

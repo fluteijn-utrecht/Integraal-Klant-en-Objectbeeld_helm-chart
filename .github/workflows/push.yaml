@@ -3,6 +3,8 @@ name: Build and Publish IKO helmchart
 on:
   workflow_dispatch:
   push:
+    paths:
+      - "iko/**"
     branches:
       - main
 
@@ -30,4 +32,4 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
-          charts_dir: .
+          charts_dir: /
