@@ -7,7 +7,7 @@ metadata:
 data:
   # Spring Boot configuratie
   SPRING_PROFILES_ACTIVE: {{ .Values.settings.spring.profiles.active | quote }}
-  SERVER_PORT: {{ .Values.settings.iko.connectors.serverPort | quote }}
+  SERVER_PORT: {{ .Values.settings.iko.serverPort | quote }}
   
   # Database configuratie
   SPRING_DATASOURCE_URL: {{ .Values.settings.spring.datasource.url | quote }}
