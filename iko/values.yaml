@@ -223,45 +223,45 @@ settings:
 
     connectors:
       brp:
-        # -- URL van de BRP-bron
+        # -- URL of the BRP service
         host: ""
-        # -- Geheim/token voor toegang tot BRP
+        # -- Secret/token for accessing BRP
         # Or, if using existingSecret: `IKO_CONNECTORS_BRP_SECRET`
         secret: ""
         specificationuri: "https://raw.githubusercontent.com/BRP-API/Haal-Centraal-BRP-bevragen/refs/tags/v2.2.1-mock/specificatie/genereervariant/openapi.json"
 
       objects:
-        # -- URL van de Objects-bron
+        # -- URL of the Objects service
         host: ""
-        # -- Token bij de Objects-client
+        # -- Token for the Objects client
         # Or, if using existingSecret: `IKO_CONNECTORS_OBJECTENAPI_TOKEN`
         token: ""
-        # -- OpenAPI specificatie-URL voor de Objects-bron
+        # -- OpenAPI specification URL for the Objects service
         specificationuri: ""
 
       openzaak:
-        # -- URL van Open Zaak-bron
+        # -- URL of the Open Zaak service
         host: ""
-        # -- Client-ID voor Open Zaak-authenticatie
+        # -- Client ID used to authenticate with Open Zaak
         clientId: ""
-        # -- Secret bij de Open Zaak-client
+        # -- Secret for the Open Zaak client
         # Or, if using existingSecret: `IKO_CONNECTORS_OPENZAAK_SECRET`
         secret: ""
         specificationuri: ""
 
       bag:
-        # -- URL van de BAG-bron
+        # -- URL of the BAG service
         host: "https://api.bag.kadaster.nl"
-        # -- API-sleutel voor toegang tot BAG
+        # -- API key for accessing BAG
         # Or, if using existingSecret: `IKO_CONNECTORS_BAG_APIKEY`
         apikey: ""
         specificationuri: ""
 
       openklant:
-        # -- URL van de Open Klant-bron
+        # -- URL of the Open Klant service
         host: ""
-        # -- Token voor authenticatie bij de Open Klant-bron
+        # -- Token used to authenticate with the Open Klant service
         # Or, if using existingSecret: `IKO_CONNECTORS_OPENKLANT_TOKEN`
         token: ""
-        # -- OpenAPI specificatie-URL voor de Open Klant-bron
+        # -- OpenAPI specification URL for the Open Klant service
         specificationuri: ""
