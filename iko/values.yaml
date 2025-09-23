@@ -236,6 +236,7 @@ settings:
         # -- Token bij de Objects-client
         # Or, if using existingSecret: `IKO_CONNECTORS_OBJECTENAPI_TOKEN`
         token: ""
+        # -- OpenAPI specificatie-URL voor de Objects-bron
         specificationuri: ""
 
       openzaak:
@@ -254,4 +255,13 @@ settings:
         # -- API-sleutel voor toegang tot BAG
         # Or, if using existingSecret: `IKO_CONNECTORS_BAG_APIKEY`
         apikey: ""
+        specificationuri: ""
+
+      openklant:
+        # -- URL van de Open Klant-bron
+        host: ""
+        # -- Token voor authenticatie bij de Open Klant-bron
+        # Or, if using existingSecret: `IKO_CONNECTORS_OPENKLANT_TOKEN`
+        token: ""
+        # -- OpenAPI specificatie-URL voor de Open Klant-bron
         specificationuri: ""
