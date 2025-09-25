@@ -97,6 +97,11 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | settings.keycloak.clientSecret | string | `""` | Client-Secret to connect with Keycloak. Or, if using existingSecret: `KEYCLOAK_CREDENTIALS_SECRET` and `SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAKAPI_CLIENTSECRET` (must set both) |
 | settings.keycloak.publicKey | string | `""` | Keycloak's Public Key used to verify signature of JWTs - Required. In Keycloak, this can be found under (in the realm you're using): 'Realm settings' -> 'Keys'.  Use the public key with Use: 'SIG' and Provider: 'rsa-generated'. |
 | settings.keycloak.realm | string | `""` | Keycloak realm - Required |
+| settings.management.endpoint.health.enabled | bool | `true` | Enable the Actuator health endpoint |
+| settings.management.endpoint.health.probes.enabled | bool | `true` | Enable the Kubernetes probe extensions on the health endpoint |
+| settings.management.endpoint.health.showDetails | string | `"when_authorized"` | Show health details when the caller is authorised |
+| settings.management.endpoints.web.basePath | string | `"/actuator"` | Base path for Actuator endpoints |
+| settings.management.endpoints.web.exposure.include | string | `"health,info,prometheus"` | Comma-separated list of Actuator endpoints to expose |
 | settings.spring.actuator.password | string | `"TOPSECRET"` | Password to access the Spring actuator endpoint |
 | settings.spring.actuator.username | string | `"admin"` | Username to access the Spring actuator endpoint |
 | settings.spring.datasource.driverClassName | string | `"org.postgresql.Driver"` | Driver for the postgresql database |
