@@ -20,13 +20,6 @@ data:
   SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KEYCLOAK_CLIENTID: {{ .Values.settings.keycloak.clientID | quote }}
   SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI: {{ printf "%s/realms/%s" .Values.settings.keycloak.authServerURL .Values.settings.keycloak.realm | quote }}
   
-  # Actuator configuratie
-  MANAGEMENT_ENDPOINTS_WEB_BASE_PATH: {{ .Values.settings.management.endpoints.web.basePath | quote }}
-  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: {{ .Values.settings.management.endpoints.web.exposure.include | quote }}
-  MANAGEMENT_ENDPOINT_HEALTH_ENABLED: {{ .Values.settings.management.endpoint.health.enabled | quote }}
-  MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS: {{ .Values.settings.management.endpoint.health.showDetails | quote }}
-  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: {{ .Values.settings.management.endpoint.health.probes.enabled | quote }}
-
   # IKO bronnen configuratie
   IKO_CONNECTORS_BRP_ENABLED: {{ .Values.settings.iko.connectors.brp.enabled | quote }}
   IKO_CONNECTORS_BRP_HOST: {{ .Values.settings.iko.connectors.brp.host | quote }}

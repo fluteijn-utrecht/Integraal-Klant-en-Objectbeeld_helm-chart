@@ -277,21 +277,3 @@ settings:
         token: ""
         # -- OpenAPI specification URL for the Open Klant service
         specificationuri: ""
-
-  management:
-    endpoints:
-      web:
-        # -- Base path for Actuator endpoints
-        basePath: "/actuator"
-        exposure:
-          # -- Comma-separated list of Actuator endpoints to expose
-          include: "health,info,prometheus"
-    endpoint:
-      health:
-        # -- Enable the Actuator health endpoint
-        enabled: true
-        # -- Show details on the health endpoint when the caller is authorised
-        showDetails: "when_authorized"
-        probes:
-          # -- Enable the Kubernetes probe extensions on the health endpoint
-          enabled: true
