@@ -31,7 +31,7 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.path | string | `"/admin"` |  |
+| livenessProbe.httpGet.path | string | `"/actuator/health"` |  |
 | livenessProbe.httpGet.port | string | `"admin-port"` |  |
 | livenessProbe.initialDelaySeconds | int | `10` |  |
 | livenessProbe.periodSeconds | int | `30` |  |
@@ -58,7 +58,7 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | ports[0].containerPort | int | `8080` |  |
 | ports[0].name | string | `"admin-port"` |  |
 | readinessProbe.failureThreshold | int | `3` |  |
-| readinessProbe.httpGet.path | string | `"/admin"` |  |
+| readinessProbe.httpGet.path | string | `"/actuator/health"` |  |
 | readinessProbe.httpGet.port | string | `"admin-port"` |  |
 | readinessProbe.periodSeconds | int | `10` |  |
 | readinessProbe.successThreshold | int | `1` |  |
@@ -106,7 +106,7 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | settings.spring.jpa.properties.hibernateDialect | string | `"org.hibernate.dialect.PostgreSQLDialect"` |  |
 | settings.spring.profiles.active | string | `"cloud"` | Activated Spring profiles |
 | startupProbe.failureThreshold | int | `30` |  |
-| startupProbe.httpGet.path | string | `"/admin"` |  |
+| startupProbe.httpGet.path | string | `"/actuator/health"` |  |
 | startupProbe.httpGet.port | string | `"admin-port"` |  |
 | startupProbe.initialDelaySeconds | int | `5` |  |
 | startupProbe.periodSeconds | int | `10` |  |
