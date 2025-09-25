@@ -223,6 +223,8 @@ settings:
 
     connectors:
       brp:
+        # -- Enable the BRP connector
+        enabled: false
         # -- URL of the BRP service
         host: ""
         # -- Secret/token for accessing BRP
@@ -231,6 +233,8 @@ settings:
         specificationuri: "https://raw.githubusercontent.com/BRP-API/Haal-Centraal-BRP-bevragen/refs/tags/v2.2.1-mock/specificatie/genereervariant/openapi.json"
 
       objects:
+        # -- Enable the Objects connector
+        enabled: false
         # -- URL of the Objects service
         host: ""
         # -- Token for the Objects client
@@ -240,6 +244,8 @@ settings:
         specificationuri: ""
 
       openzaak:
+        # -- Enable the Open Zaak connector
+        enabled: false
         # -- URL of the Open Zaak service
         host: ""
         # -- Client ID used to authenticate with Open Zaak
@@ -250,6 +256,8 @@ settings:
         specificationuri: ""
 
       bag:
+        # -- Enable the BAG connector
+        enabled: false
         # -- URL of the BAG service
         host: "https://api.bag.kadaster.nl"
         # -- API key for accessing BAG
@@ -258,6 +266,8 @@ settings:
         specificationuri: ""
 
       openklant:
+        # -- Enable the Open Klant connector
+        enabled: false
         # -- URL of the Open Klant service
         host: ""
         # -- Token used to authenticate with the Open Klant service
