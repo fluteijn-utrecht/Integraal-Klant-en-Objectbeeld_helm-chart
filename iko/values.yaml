@@ -78,7 +78,7 @@ ports:
 
 startupProbe:
   httpGet:
-    path: /tab-illo.png
+    path: /login
     port: http
   initialDelaySeconds: 5
   periodSeconds: 10
@@ -86,7 +86,7 @@ startupProbe:
 
 livenessProbe:
   httpGet:
-    path: /tab-illo.png
+    path: /login
     port: http
   initialDelaySeconds: 10
   periodSeconds: 30
@@ -96,7 +96,7 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    path: /tab-illo.png
+    path: /login
     port: http
   periodSeconds: 10
   timeoutSeconds: 1
