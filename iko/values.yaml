@@ -78,7 +78,7 @@ ports:
 
 startupProbe:
   httpGet:
-    path: /actuator/health
+    path: /tab-illo.png
     port: http
   initialDelaySeconds: 5
   periodSeconds: 10
@@ -86,7 +86,7 @@ startupProbe:
 
 livenessProbe:
   httpGet:
-    path: /actuator/health
+    path: /tab-illo.png
     port: http
   initialDelaySeconds: 10
   periodSeconds: 30
@@ -96,7 +96,7 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    path: /actuator/health
+    path: /tab-illo.png
     port: http
   periodSeconds: 10
   timeoutSeconds: 1
