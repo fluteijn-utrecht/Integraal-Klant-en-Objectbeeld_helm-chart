@@ -57,16 +57,6 @@ ingress:
       paths:
         - path: /admin
           pathType: Prefix
-        - path: /login
-          pathType: Prefix
-        - path: /oauth2
-          pathType: Prefix
-        - path: /endpoints
-          pathType: Prefix
-        - path: /aggregated-data-profiles
-          pathType: Prefix
-        - path: /tab-illo.png
-          pathType: Prefix
   tls: []
   #  - secretName: iko-example-tls
   #    hosts:
@@ -78,7 +68,7 @@ ports:
 
 startupProbe:
   httpGet:
-    path: /login
+    path: /admin
     port: http
   initialDelaySeconds: 5
   periodSeconds: 10
@@ -86,7 +76,7 @@ startupProbe:
 
 livenessProbe:
   httpGet:
-    path: /login
+    path: /admin
     port: http
   initialDelaySeconds: 10
   periodSeconds: 30
@@ -96,7 +86,7 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    path: /login
+    path: /admin
     port: http
   periodSeconds: 10
   timeoutSeconds: 1
