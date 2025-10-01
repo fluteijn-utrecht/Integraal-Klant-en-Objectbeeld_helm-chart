@@ -1,6 +1,6 @@
 # iko
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
 
 A Helm chart for Integraal Klant Objectbeeld (IKO)
 
@@ -29,19 +29,9 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | ingress.hosts[0].host | string | `"iko.example.com"` |  |
 | ingress.hosts[0].paths[0].path | string | `"/admin"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
-| ingress.hosts[0].paths[1].path | string | `"/login"` |  |
-| ingress.hosts[0].paths[1].pathType | string | `"Prefix"` |  |
-| ingress.hosts[0].paths[2].path | string | `"/oauth2"` |  |
-| ingress.hosts[0].paths[2].pathType | string | `"Prefix"` |  |
-| ingress.hosts[0].paths[3].path | string | `"/endpoints"` |  |
-| ingress.hosts[0].paths[3].pathType | string | `"Prefix"` |  |
-| ingress.hosts[0].paths[4].path | string | `"/aggregated-data-profiles"` |  |
-| ingress.hosts[0].paths[4].pathType | string | `"Prefix"` |  |
-| ingress.hosts[0].paths[5].path | string | `"/tab-illo.png"` |  |
-| ingress.hosts[0].paths[5].pathType | string | `"Prefix"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.path | string | `"/login"` |  |
+| livenessProbe.httpGet.path | string | `"/admin"` |  |
 | livenessProbe.httpGet.port | string | `"http"` |  |
 | livenessProbe.initialDelaySeconds | int | `10` |  |
 | livenessProbe.periodSeconds | int | `30` |  |
@@ -68,7 +58,7 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | ports[0].containerPort | int | `8080` |  |
 | ports[0].name | string | `"http"` |  |
 | readinessProbe.failureThreshold | int | `3` |  |
-| readinessProbe.httpGet.path | string | `"/login"` |  |
+| readinessProbe.httpGet.path | string | `"/admin"` |  |
 | readinessProbe.httpGet.port | string | `"http"` |  |
 | readinessProbe.periodSeconds | int | `10` |  |
 | readinessProbe.successThreshold | int | `1` |  |
@@ -121,7 +111,7 @@ A Helm chart for Integraal Klant Objectbeeld (IKO)
 | settings.spring.jpa.properties.hibernateDialect | string | `"org.hibernate.dialect.PostgreSQLDialect"` |  |
 | settings.spring.profiles.active | string | `"cloud"` | Activated Spring profiles |
 | startupProbe.failureThreshold | int | `30` |  |
-| startupProbe.httpGet.path | string | `"/login"` |  |
+| startupProbe.httpGet.path | string | `"/admin"` |  |
 | startupProbe.httpGet.port | string | `"http"` |  |
 | startupProbe.initialDelaySeconds | int | `5` |  |
 | startupProbe.periodSeconds | int | `10` |  |
