@@ -57,6 +57,14 @@ ingress:
       paths:
         - path: /admin
           pathType: Prefix
+        - path: /tab-illo.png
+          pathType: Prefix
+        - path: /admin
+          pathType: Prefix
+        - path: /oauth2
+          pathType: Prefix
+        - path: /login/oauth2
+          pathType: Prefix
   tls: []
   #  - secretName: iko-example-tls
   #    hosts:
