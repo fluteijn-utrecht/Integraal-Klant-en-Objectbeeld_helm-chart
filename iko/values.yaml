@@ -222,56 +222,56 @@ settings:
     connectors:
       brp:
         # -- Enable the BRP connector
-        enabled: false
+        enabled: true
         # -- URL of the BRP service
         host: ""
         # -- Secret/token for accessing BRP
         # Or, if using existingSecret: `IKO_CONNECTORS_BRP_SECRET`
         secret: ""
-        specificationuri: "https://raw.githubusercontent.com/BRP-API/Haal-Centraal-BRP-bevragen/refs/tags/v2.2.1-mock/specificatie/genereervariant/openapi.json"
+        specificationuri: "https://developer.rvig.nl/brp-api/personen/_attachments/openapi.yaml"
 
       objects:
         # -- Enable the Objects connector
-        enabled: false
+        enabled: true
         # -- URL of the Objects service
         host: ""
         # -- Token for the Objects client
         # Or, if using existingSecret: `IKO_CONNECTORS_OBJECTENAPI_TOKEN`
         token: ""
         # -- OpenAPI specification URL for the Objects service
-        specificationuri: ""
+        specificationuri: "https://raw.githubusercontent.com/maykinmedia/objects-api/3.1.2/src/objects/api/v2/openapi.yaml"
 
       openzaak:
         # -- Enable the Open Zaak connector
-        enabled: false
+        enabled: true
         # -- URL of the Open Zaak service
         host: ""
         # -- Client ID used to authenticate with Open Zaak
         clientId: ""
         # -- Secret for the Open Zaak client
         # Or, if using existingSecret: `IKO_CONNECTORS_OPENZAAK_SECRET`
-        secret: ""
+        secret: "" 
         # -- OpenZaak specification URL
-        specificationuri: ""
+        specificationuri: "https://raw.githubusercontent.com/vng-Realisatie/zaken-api/1.5.1/src/openapi.yaml"
 
       bag:
         # -- Enable the BAG connector
-        enabled: false
+        enabled: true
         # -- URL of the BAG service
-        host: "https://api.bag.kadaster.nl"
+        host: ""
         # -- API key for accessing BAG
         # Or, if using existingSecret: `IKO_CONNECTORS_BAG_APIKEY`
         apikey: ""
         # -- BAG specification URL
-        specificationuri: ""
+        specificationuri: "https://api.bag.kadaster.nl/lvbag/individuelebevragingen/v2/openapi.yaml"
 
       openklant:
         # -- Enable the Open Klant connector
-        enabled: false
+        enabled: true
         # -- URL of the Open Klant service
         host: ""
         # -- Token used to authenticate with the Open Klant service
         # Or, if using existingSecret: `IKO_CONNECTORS_OPENKLANT_TOKEN`
         token: ""
         # -- OpenAPI specification URL for the Open Klant service
-        specificationuri: ""
+        specificationuri: "https://raw.githubusercontent.com/maykinmedia/open-klant/2.10.0/src/openklant/components/klantinteracties/openapi.yaml"
