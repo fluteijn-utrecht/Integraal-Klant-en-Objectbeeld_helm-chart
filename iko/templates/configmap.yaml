@@ -6,14 +6,12 @@ metadata:
     {{- include "iko.labels" . | nindent 4 }}
 data:
   # Spring Boot configuratie
-  SPRING_PROFILES_ACTIVE: {{ .Values.settings.spring.profiles.active | quote }}
-  SPRINGACTUATOR_USERNAME: {{ .Values.settings.spring.actuator.username | quote }}
   SERVER_PORT: {{ .Values.settings.iko.serverPort | quote }}
   
   # Database configuratie
   SPRING_DATASOURCE_URL: {{ .Values.settings.spring.datasource.url | quote }}
   SPRING_DATASOURCE_USERNAME: {{ .Values.settings.spring.datasource.username | quote }}
-  SPRING_DATASOURCE_DRIVER-CLASS-NAME: {{ .Values.settings.spring.datasource.driverClassName | quote }}
+  SPRING_DATASOURCE_DRIVERCLASSNAME: {{ .Values.settings.spring.datasource.driverClassName | quote }}
   SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: {{ .Values.settings.spring.jpa.properties.hibernateDialect }}
   
   # OAuth2 en Security configuratie
