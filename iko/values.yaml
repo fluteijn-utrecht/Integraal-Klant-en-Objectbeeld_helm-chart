@@ -57,6 +57,8 @@ ingress:
       paths:
         - path: /admin
           pathType: Prefix
+        - path: /assets
+          pathType: Prefix
   tls: []
   #  - secretName: iko-example-tls
   #    hosts:
@@ -210,60 +212,7 @@ settings:
   iko:
     # -- Port IKO listens on
     serverPort: 8080
+    # IKO uses AES encryption for config storage of connectors. Please generate a Base64 key.
+    # E.g.: openssl rand -base64 32
+    cryptoKey: ""
 
-    connectors:
-      brp:
-        # -- Enable the BRP connector
-        enabled: false
-        # -- URL of the BRP service
-        host: ""
-        # -- Secret/token for accessing BRP
-        # Or, if using existingSecret: `IKO_CONNECTORS_BRP_SECRET`
-        secret: ""
-        specificationuri: "https://raw.githubusercontent.com/BRP-API/Haal-Centraal-BRP-bevragen/refs/tags/v2.2.1-mock/specificatie/genereervariant/openapi.json"
-
-      objects:
-        # -- Enable the Objects connector
-        enabled: false
-        # -- URL of the Objects service
-        host: ""
-        # -- Token for the Objects client
-        # Or, if using existingSecret: `IKO_CONNECTORS_OBJECTENAPI_TOKEN`
-        token: ""
-        # -- OpenAPI specification URL for the Objects service
-        specificationuri: ""
-
-      openzaak:
-        # -- Enable the Open Zaak connector
-        enabled: false
-        # -- URL of the Open Zaak service
-        host: ""
-        # -- Client ID used to authenticate with Open Zaak
-        clientId: ""
-        # -- Secret for the Open Zaak client
-        # Or, if using existingSecret: `IKO_CONNECTORS_OPENZAAK_SECRET`
-        secret: ""
-        # -- OpenZaak specification URL
-        specificationuri: ""
-
-      bag:
-        # -- Enable the BAG connector
-        enabled: false
-        # -- URL of the BAG service
-        host: "https://api.bag.kadaster.nl"
-        # -- API key for accessing BAG
-        # Or, if using existingSecret: `IKO_CONNECTORS_BAG_APIKEY`
-        apikey: ""
-        # -- BAG specification URL
-        specificationuri: ""
-
-      openklant:
-        # -- Enable the Open Klant connector
-        enabled: false
-        # -- URL of the Open Klant service
-        host: ""
-        # -- Token used to authenticate with the Open Klant service
-        # Or, if using existingSecret: `IKO_CONNECTORS_OPENKLANT_TOKEN`
-        token: ""
-        # -- OpenAPI specification URL for the Open Klant service
-        specificationuri: ""
