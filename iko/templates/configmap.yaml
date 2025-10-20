@@ -6,6 +6,7 @@ metadata:
     {{- include "iko.labels" . | nindent 4 }}
 data:
   # Spring Boot configuratie
+  SPRINGACTUATOR_USERNAME: {{ .Values.settings.spring.actuator.username | quote }}
   SERVER_PORT: {{ .Values.settings.iko.serverPort | quote }}
   
   # Database configuratie

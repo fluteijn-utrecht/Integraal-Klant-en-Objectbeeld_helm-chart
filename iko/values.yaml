@@ -167,6 +167,11 @@ monitoring:
 
 settings:
   spring:
+    actuator:
+      # -- Username to access the Spring actuator endpoint
+      username: "admin"
+      # -- Password to access the Spring actuator endpoint
+      password: "TOPSECRET"
     datasource: 
       # -- URL for the postgresql database
       url: ""
